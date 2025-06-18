@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bioesthetic Brasil 2025 - Congresso de Estética Avançada</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <!-- DNA Animation Background -->
+    <div class="dna-background">
+        <div class="dna-strand"></div>
+        <div class="dna-strand dna-strand-2"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <img src="logo.svg" alt="Bioesthetic Brasil 2025" class="logo-img">
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link">Início</a></li>
+                    <li><a href="#about" class="nav-link">Sobre</a></li>
+                    <li><a href="#agenda" class="nav-link">Agenda</a></li>
+                    <li><a href="#speakers" class="nav-link">Palestrantes</a></li>
+                    <li><a href="#organizers" class="nav-link">Organizadores</a></li>
+                    <li><a href="#exhibitors" class="nav-link">Expositores</a></li>
+                    <li><a href="#contact" class="nav-link">Contato</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="gradient-text">BIOESTHETIC</span>
+                    <span class="year">BRASIL 2025</span>
+                </h1>
+                <p class="hero-subtitle">Congresso de Estética Avançada</p>
+                <p class="hero-description">
+                    O maior evento de estética avançada do Brasil. 
+                    Tecnologia, inovação e conhecimento em um só lugar.
+                </p>
+                <div class="hero-date">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>21, 22 e 23 de [Mês] 2025</span>
+                </div>
+                <div class="hero-buttons">
+                    <a href="https://www.sympla.com.br/evento/bioesthetic-brasil-2025/2769402" 
+                       target="_blank" class="btn btn-primary">
+                        <i class="fas fa-ticket-alt"></i>
+                        Comprar Ingresso
+                    </a>
+                    <a href="#agenda" class="btn btn-secondary">
+                        <i class="fas fa-calendar-check"></i>
+                        Ver Agenda
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-elements">
+                    <div class="element syringe"><i class="fas fa-syringe"></i></div>
+                    <div class="element face"><i class="fas fa-user-circle"></i></div>
+                    <div class="element dna"><i class="fas fa-dna"></i></div>
+                    <div class="element microscope"><i class="fas fa-microscope"></i></div>
+                </div>
+                <!-- Advanced DNA Animation Hero -->
+                <div class="hero-dna">
+                    <canvas id="dna-canvas-hero"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <!-- DNA Animation About -->
+        <div class="about-dna">
+            <canvas id="dna-canvas-about"></canvas>
+        </div>
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Sobre o Evento</h2>
+                <p class="section-subtitle">Inovação e conhecimento em estética avançada</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>O Bioesthetic Brasil 2025 é o principal congresso de estética avançada do país, reunindo os maiores especialistas, tecnologias inovadoras e as últimas tendências do setor.</p>
+                    <ul class="about-features">
+                        <li><i class="fas fa-check-circle"></i> Palestras com especialistas renomados</li>
+                        <li><i class="fas fa-check-circle"></i> Demonstrações práticas de procedimentos</li>
+                        <li><i class="fas fa-check-circle"></i> Exposição de tecnologias de ponta</li>
+                        <li><i class="fas fa-check-circle"></i> Networking com profissionais do setor</li>
+                    </ul>
+                </div>
+                <div class="about-stats">
+                    <div class="stat">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Participantes</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Palestrantes</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">30+</div>
+                        <div class="stat-label">Expositores</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Agenda Section -->
+    <section id="agenda" class="agenda">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Agenda do Evento</h2>
+                <p class="section-subtitle">Programação completa dos três dias</p>
+            </div>
+            <div class="agenda-tabs">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" data-tab="day1">
+                        <span class="tab-date">21</span>
+                        <span class="tab-label">Jantar Científico VIP</span>
+                    </button>
+                    <button class="tab-btn" data-tab="day2">
+                        <span class="tab-date">22</span>
+                        <span class="tab-label">Primeiro Dia</span>
+                    </button>
+                    <button class="tab-btn" data-tab="day3">
+                        <span class="tab-date">23</span>
+                        <span class="tab-label">Segundo Dia</span>
+                    </button>
+                </div>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="day1">
+                        <div class="agenda-item">
+                            <div class="time">19:00</div>
+                            <div class="content">
+                                <h3>Jantar Científico VIP</h3>
+                                <p>Evento exclusivo para participantes VIP com apresentações especiais e networking.</p>
+                                <span class="category vip">Exclusivo VIP</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="day2">
+                        <div class="agenda-item">
+                            <div class="time">08:00</div>
+                            <div class="content">
+                                <h3>Credenciamento</h3>
+                                <p>Recepção dos participantes e distribuição de materiais</p>
+                            </div>
+                        </div>
+                        <div class="agenda-item">
+                            <div class="time">09:00</div>
+                            <div class="content">
+                                <h3>Abertura Oficial</h3>
+                                <p>Cerimônia de abertura com os organizadores principais</p>
+                            </div>
+                        </div>
+                        <div class="agenda-item">
+                            <div class="time">10:00</div>
+                            <div class="content">
+                                <h3>Tendências em Estética Facial</h3>
+                                <p>Palestra magna sobre as últimas inovações em procedimentos faciais</p>
+                                <span class="category main">Palestra Principal</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="day3">
+                        <div class="agenda-item">
+                            <div class="time">09:00</div>
+                            <div class="content">
+                                <h3>Tecnologias Emergentes</h3>
+                                <p>Apresentação das mais novas tecnologias em estética</p>
+                                <span class="category tech">Tecnologia</span>
+                            </div>
+                        </div>
+                        <div class="agenda-item">
+                            <div class="time">15:00</div>
+                            <div class="content">
+                                <h3>Encerramento</h3>
+                                <p>Cerimônia de encerramento e networking final</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Science & Innovation Section -->
+    <section class="science-section">
+        <div class="container">
+            <div class="science-content">
+                <div class="science-text">
+                    <h2>Ciência & Inovação</h2>
+                    <p>Na vanguarda da biotecnologia aplicada à estética, exploramos as mais avançadas técnicas moleculares e genéticas que revolucionam os tratamentos estéticos.</p>
+                    <p>Nosso congresso apresenta as últimas descobertas em engenharia genética, terapias celulares e biomarcadores que definem o futuro da medicina estética.</p>
+                    <ul class="science-features">
+                        <li><i class="fas fa-dna"></i> Terapia Genética Aplicada</li>
+                        <li><i class="fas fa-microscope"></i> Biomarcadores Avançados</li>
+                        <li><i class="fas fa-atom"></i> Nanotecnologia Estética</li>
+                        <li><i class="fas fa-flask"></i> Biotecnologia Regenerativa</li>
+                    </ul>
+                </div>
+                <div class="science-dna">
+                    <canvas id="dna-canvas-science"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Speakers Section -->
+    <section id="speakers" class="speakers">
+        <!-- DNA Animation Speakers -->
+        <div class="speakers-dna">
+            <canvas id="dna-canvas-speakers"></canvas>
+        </div>
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Palestrantes</h2>
+                <p class="section-subtitle">Especialistas renomados em estética avançada</p>
+            </div>
+            <div class="speakers-grid">
+                <div class="speaker-card">
+                    <div class="speaker-image">
+                                                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDMwMCA0MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIzMDAiIGhlaWdodD0iNDAwIiBmaWxsPSIjMzMzIi8+Cjx0ZXh0IHg9IjE1MCIgeT0iMjAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjRkZENzAwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTYiPkRyLiBBbGV4YW5kcmUgU2lsdmE8L3RleHQ+Cjwvc3ZnPg==" alt="Dr. Alexandre Silva">
+                        <div class="speaker-overlay">
+                            <div class="speaker-social">
+                                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                                <a href="#" class="social-icon"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="speaker-info">
+                        <h3 class="speaker-name">Dr. Alexandre Silva</h3>
+                        <p class="speaker-title">Dermatologista Especialista</p>
+                        <p class="speaker-speciality">Harmonização Facial</p>
+                        <div class="speaker-credentials">
+                            <span class="credential">CRM 12345-SP</span>
+                            <span class="credential">15+ anos</span>
+                        </div>
+                        <p class="speaker-bio">Especialista em harmonização facial com mais de 15 anos de experiência. Pioneiro em técnicas minimamente invasivas.</p>
+                        <div class="speaker-talk">
+                            <i class="fas fa-microphone-alt"></i>
+                            <span>"Tendências em Preenchimento Facial 2025"</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="speaker-card">
+                    <div class="speaker-image">
+                                                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDMwMCA0MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIzMDAiIGhlaWdodD0iNDAwIiBmaWxsPSIjMzMzIi8+Cjx0ZXh0IHg9IjE1MCIgeT0iMjAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjRkZENzAwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTYiPkRyYS4gTWFyaW5hIFNhbnRvczwvdGV4dD4KPHN2Zz4=" alt="Dra. Marina Santos">
+                        <div class="speaker-overlay">
+                            <div class="speaker-social">
+                                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                                <a href="#" class="social-icon"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="speaker-info">
+                        <h3 class="speaker-name">Dra. Marina Santos</h3>
+                        <p class="speaker-title">Cirurgiã Plástica</p>
+                        <p class="speaker-speciality">Rejuvenescimento Facial</p>
+                        <div class="speaker-credentials">
+                            <span class="credential">CRM 54321-RJ</span>
+                            <span class="credential">20+ anos</span>
+                        </div>
+                        <p class="speaker-bio">Referência em cirurgia plástica facial e técnicas de rejuvenescimento. Professora em diversos cursos de especialização.</p>
+                        <div class="speaker-talk">
+                            <i class="fas fa-microphone-alt"></i>
+                            <span>"Bioestimuladores: O Futuro do Anti-aging"</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="speaker-card">
+                    <div class="speaker-image">
+                                                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDMwMCA0MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIzMDAiIGhlaWdodD0iNDAwIiBmaWxsPSIjMzMzIi8+Cjx0ZXh0IHg9IjE1MCIgeT0iMjAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjRkZENzAwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTYiPkRyLiBDYXJsb3MgTWVuZGVzPC90ZXh0Pgo8L3N2Zz4=" alt="Dr. Carlos Mendes">
+                        <div class="speaker-overlay">
+                            <div class="speaker-social">
+                                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                                <a href="#" class="social-icon"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="speaker-info">
+                        <h3 class="speaker-name">Dr. Carlos Mendes</h3>
+                        <p class="speaker-title">Médico Estético</p>
+                        <p class="speaker-speciality">Tecnologias Avançadas</p>
+                        <div class="speaker-credentials">
+                            <span class="credential">CRM 98765-MG</span>
+                            <span class="credential">12+ anos</span>
+                        </div>
+                        <p class="speaker-bio">Especialista em tecnologias de ponta para estética. Consultor em equipamentos médicos e inovação.</p>
+                        <div class="speaker-talk">
+                            <i class="fas fa-microphone-alt"></i>
+                            <span>"Inteligência Artificial na Medicina Estética"</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="speaker-card">
+                    <div class="speaker-image">
+                                                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDMwMCA0MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIzMDAiIGhlaWdodD0iNDAwIiBmaWxsPSIjMzMzIi8+Cjx0ZXh0IHg9IjE1MCIgeT0iMjAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjRkZENzAwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTYiPkRyYS4gRmVybmFuZGEgQ29zdGE8L3RleHQ+Cjwvc3ZnPg==" alt="Dra. Fernanda Costa">
+                        <div class="speaker-overlay">
+                            <div class="speaker-social">
+                                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                                <a href="#" class="social-icon"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="speaker-info">
+                        <h3 class="speaker-name">Dra. Fernanda Costa</h3>
+                        <p class="speaker-title">Biomédica Estética</p>
+                        <p class="speaker-speciality">Protocolos Avançados</p>
+                        <div class="speaker-credentials">
+                            <span class="credential">CRBM 12345</span>
+                            <span class="credential">10+ anos</span>
+                        </div>
+                        <p class="speaker-bio">Especialista em protocolos combinados e tratamentos personalizados. Pesquisadora em cosmetologia avançada.</p>
+                        <div class="speaker-talk">
+                            <i class="fas fa-microphone-alt"></i>
+                            <span>"Protocolos Combinados: Maximizando Resultados"</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="speaker-card">
+                    <div class="speaker-image">
+                                                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDMwMCA0MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIzMDAiIGhlaWdodD0iNDAwIiBmaWxsPSIjMzMzIi8+Cjx0ZXh0IHg9IjE1MCIgeT0iMjAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjRkZENzAwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTYiPkRyLiBSb2JlcnRvIExpbWE8L3RleHQ+Cjwvc3ZnPg==" alt="Dr. Roberto Lima">
+                        <div class="speaker-overlay">
+                            <div class="speaker-social">
+                                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                                <a href="#" class="social-icon"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="speaker-info">
+                        <h3 class="speaker-name">Dr. Roberto Lima</h3>
+                        <p class="speaker-title">Cirurgião Plástico</p>
+                        <p class="speaker-speciality">Rinoplastia Ultrassônica</p>
+                        <div class="speaker-credentials">
+                            <span class="credential">CRM 11111-SP</span>
+                            <span class="credential">18+ anos</span>
+                        </div>
+                        <p class="speaker-bio">Pioneiro em rinoplastia ultrassônica no Brasil. Instrutor internacional em técnicas avançadas de cirurgia nasal.</p>
+                        <div class="speaker-talk">
+                            <i class="fas fa-microphone-alt"></i>
+                            <span>"Revolução na Rinoplastia: Técnica Ultrassônica"</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="speaker-card">
+                    <div class="speaker-image">
+                                                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDMwMCA0MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIzMDAiIGhlaWdodD0iNDAwIiBmaWxsPSIjMzMzIi8+Cjx0ZXh0IHg9IjE1MCIgeT0iMjAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjRkZENzAwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTYiPkRyYS4gUGF0csOtY2lhIE9saXZlaXJhPC90ZXh0Pgo8L3N2Zz4=" alt="Dra. Patrícia Oliveira">
+                        <div class="speaker-overlay">
+                            <div class="speaker-social">
+                                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                                <a href="#" class="social-icon"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="speaker-info">
+                        <h3 class="speaker-name">Dra. Patrícia Oliveira</h3>
+                        <p class="speaker-title">Dermatologista</p>
+                        <p class="speaker-speciality">Laser e Energia</p>
+                        <div class="speaker-credentials">
+                            <span class="credential">CRM 33333-RS</span>
+                            <span class="credential">14+ anos</span>
+                        </div>
+                        <p class="speaker-bio">Especialista em tratamentos com laser e tecnologias de energia. Referência em rejuvenescimento não invasivo.</p>
+                        <div class="speaker-talk">
+                            <i class="fas fa-microphone-alt"></i>
+                            <span>"Novas Tecnologias em Laser Fracionado"</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Organizers Section -->
+    <section id="organizers" class="organizers">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Organizadores</h2>
+                <p class="section-subtitle">Profissionais renomados à frente do evento</p>
+            </div>
+            <div class="organizers-grid">
+                <div class="organizer-card">
+                    <div class="organizer-image">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjMzMzIi8+Cjx0ZXh0IHg9IjEwMCIgeT0iMTAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjRkZENzAwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTQiPk9yZ2FuaXphZG9yIDE8L3RleHQ+Cjwvc3ZnPg==" alt="Organizador 1">
+                    </div>
+                    <div class="organizer-info">
+                        <h3>Dr. [Nome]</h3>
+                        <p>Especialista em Dermatologia Estética</p>
+                        <div class="organizer-social">
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="organizer-card">
+                    <div class="organizer-image">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjMzMzIi8+Cjx0ZXh0IHg9IjEwMCIgeT0iMTAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjRkZENzAwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTQiPk9yZ2FuaXphZG9yIDI8L3RleHQ+Cjwvc3ZnPg==" alt="Organizador 2">
+                    </div>
+                    <div class="organizer-info">
+                        <h3>Dra. [Nome]</h3>
+                        <p>Especialista em Medicina Estética</p>
+                        <div class="organizer-social">
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Exhibitors Section -->
+    <section id="exhibitors" class="exhibitors">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Expositores</h2>
+                <p class="section-subtitle">Empresas e marcas parceiras do evento</p>
+            </div>
+            <div class="exhibitors-grid">
+                <div class="exhibitor-card">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDIwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMTAwIiBmaWxsPSIjMzMzIi8+Cjx0ZXh0IHg9IjEwMCIgeT0iNTUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiNGRkQ3MDAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxMiI+RXhwb3NpdG9yIDE8L3RleHQ+Cjwvc3ZnPg==" alt="Expositor 1">
+                </div>
+                <div class="exhibitor-card">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDIwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMTAwIiBmaWxsPSIjMzMzIi8+Cjx0ZXh0IHg9IjEwMCIgeT0iNTUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiNGRkQ3MDAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxMiI+RXhwb3NpdG9yIDI8L3RleHQ+Cjwvc3ZnPg==" alt="Expositor 2">
+                </div>
+                <div class="exhibitor-card">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDIwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMTAwIiBmaWxsPSIjMzMzIi8+Cjx0ZXh0IHg9IjEwMCIgeT0iNTUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiNGRkQ3MDAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxMiI+RXhwb3NpdG9yIDM8L3RleHQ+Cjwvc3ZnPg==" alt="Expositor 3">
+                </div>
+                <div class="exhibitor-card">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDIwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMTAwIiBmaWxsPSIjMzMzIi8+Cjx0ZXh0IHg9IjEwMCIgeT0iNTUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiNGRkQ3MDAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxMiI+RXhwb3NpdG9yIDQ8L3RleHQ+Cjwvc3ZnPg==" alt="Expositor 4">
+                </div>
+                <div class="exhibitor-card">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDIwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMTAwIiBmaWxsPSIjMzMzIi8+Cjx0ZXh0IHg9IjEwMCIgeT0iNTUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiNGRkQ3MDAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxMiI+RXhwb3NpdG9yIDU8L3RleHQ+Cjwvc3ZnPg==" alt="Expositor 5">
+                </div>
+                <div class="exhibitor-card">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDIwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMTAwIiBmaWxsPSIjMzMzIi8+Cjx0ZXh0IHg9IjEwMCIgeT0iNTUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiNGRkQ3MDAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxMiI+RXhwb3NpdG9yIDY8L3RleHQ+Cjwvc3ZnPg==" alt="Expositor 6">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <!-- DNA Animation CTA -->
+        <div class="cta-dna">
+            <canvas id="dna-canvas-cta"></canvas>
+        </div>
+        <div class="container">
+            <div class="cta-content">
+                <h2>Não Perca Esta Oportunidade</h2>
+                <p>Garante já seu lugar no maior evento de estética avançada do Brasil</p>
+                <a href="https://www.sympla.com.br/evento/bioesthetic-brasil-2025/2769402" 
+                   target="_blank" class="btn btn-primary btn-large">
+                    <i class="fas fa-ticket-alt"></i>
+                    Comprar Ingresso Agora
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Bioesthetic Brasil 2025</h3>
+                    <p>Congresso de Estética Avançada</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contato</h4>
+                    <p>Email: contato@bioestheticbrasil.com.br</p>
+                    <p>Telefone: (11) 99999-9999</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Redes Sociais</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Bioesthetic Brasil. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="dna-animation.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 

@@ -1,0 +1,11 @@
+{
+  "name": "bioesthetic",
+  "version": "1.0.0",
+  "description": "bioesthetic brasil",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
