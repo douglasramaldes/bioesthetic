@@ -6,6 +6,10 @@
 }
 
 :root {
+    /* Fontes */
+    --font-primary: 'Poppins', sans-serif;
+    --font-heading: 'The Seasons', serif;
+    
     /* Cores principais */
     --primary: #2D1B69;
     --primary-dark: #1A0E3D;
@@ -44,10 +48,20 @@
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font-primary);
     line-height: 1.6;
     color: var(--dark);
     overflow-x: hidden;
+}
+
+/* Configuração de fontes para títulos */
+h1, h2, h3, h4, h5, h6,
+.hero-title,
+.section-title,
+.speaker-name,
+.organizer-info h3,
+.cta-content h2 {
+    font-family: var(--font-heading);
 }
 
 /* Animação de DNA no fundo */
@@ -331,7 +345,7 @@ body {
 }
 
 .hero::before {
-    content: '';
+    /* content: ''; */
     position: absolute;
     top: 0;
     left: 0;
@@ -350,10 +364,13 @@ body {
 }
 
 .hero-title {
+    margin-left: 2rem;
     font-size: 4rem;
     font-weight: 700;
     margin-bottom: 1rem;
     line-height: 1.1;
+    position: relative;
+    z-index: 3;
 }
 
 .gradient-text {
@@ -371,32 +388,44 @@ body {
 }
 
 .hero-subtitle {
+    margin-left: 2rem;
     font-size: 1.5rem;
     color: rgba(255, 255, 255, 0.9);
     margin-bottom: 1rem;
     font-weight: 300;
+    position: relative;
+    z-index: 3;
 }
 
 .hero-description {
+    margin-left: 2rem;
     color: rgba(255, 255, 255, 0.8);
     font-size: 1.1rem;
     margin-bottom: 2rem;
     line-height: 1.6;
+    position: relative;
+    z-index: 3;
 }
 
 .hero-date {
+    margin-left: 2rem;
     display: flex;
     align-items: center;
     gap: 0.5rem;
     color: var(--gold);
     margin-bottom: 2rem;
     font-weight: 500;
+    position: relative;
+    z-index: 3;
 }
 
 .hero-buttons {
+    margin-left: 2rem;
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
+    position: relative;
+    z-index: 3;
 }
 
 /* Botões */
@@ -496,6 +525,38 @@ body {
     right: 40%;
     animation-delay: 4.5s;
 }
+
+/* Face Static - Background Shadow */
+.face-animation {
+    position: absolute;
+    top: -15%;
+    left: 45%;
+    width: 90%;
+    height: 110%;
+    pointer-events: none;
+    opacity: 0.25;
+    z-index: 0;
+    transform: scaleX(1); /* Voltando à orientação original - olhando para a esquerda */
+    filter: blur(0.5px);
+    overflow: hidden;
+}
+
+#face-svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    transform-origin: center;
+}
+
+/* Estilos para a animação de desenho */
+.face-animation path {
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+
+
+/* Removido - face agora é estática */
 
 @keyframes float {
     0%, 100% { transform: translateY(0) rotate(0deg); }
@@ -731,6 +792,13 @@ section {
     color: var(--white);
 }
 
+/* Custom Property for Magic Card Animation */
+@property --rotate {
+    syntax: "<angle>";
+    initial-value: 132deg;
+    inherits: false;
+}
+
 /* Speakers Section - Luxury Design */
 .speakers {
     background: linear-gradient(135deg, #2D1B69 0%, #4A148C 100%);
@@ -777,22 +845,47 @@ section {
         0 0 0 1px rgba(7, 190, 184, 0.1);
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     position: relative;
+    padding: 3px;
+    cursor: pointer;
 }
 
+/* Magic Card Border Effect */
 .speaker-card::before {
-    content: '';
+    content: "";
+    width: 104%;
+    height: 102%;
+    border-radius: 22px;
+    background-image: linear-gradient(
+        var(--rotate),
+        #07beb8, #09d9d2 43%, #4A148C
+    );
     position: absolute;
-    top: 0;
+    z-index: -1;
+    top: -1%;
+    left: -2%;
+    animation: spin 2.5s linear infinite;
+}
+
+/* Magic Card Glow Effect */
+.speaker-card::after {
+    position: absolute;
+    content: "";
+    top: 20%;
     left: 0;
     right: 0;
-    height: 3px;
-    background: linear-gradient(135deg, #07beb8 0%, #09d9d2 50%, #07beb8 100%);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.speaker-card:hover::before {
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    transform: scale(0.8);
+    filter: blur(40px);
+    background-image: linear-gradient(
+        var(--rotate),
+        #07beb8, #09d9d2 43%, #4A148C
+    );
     opacity: 1;
+    transition: opacity 0.5s;
+    animation: spin 2.5s linear infinite;
 }
 
 .speaker-card:hover {
@@ -801,6 +894,30 @@ section {
         0 30px 60px rgba(0, 0, 0, 0.6),
         0 0 0 1px rgba(7, 190, 184, 0.3),
         0 0 30px rgba(7, 190, 184, 0.1);
+}
+
+.speaker-card:hover:before, 
+.speaker-card:hover:after {
+    animation: none;
+    opacity: 0;
+}
+
+/* Keyframes for Magic Card Animation */
+@keyframes spin {
+    0% {
+        --rotate: 0deg;
+    }
+    100% {
+        --rotate: 360deg;
+    }
+}
+
+.speaker-card-content {
+    background: linear-gradient(145deg, #4A148C 0%, #2D1B69 100%);
+    border-radius: 17px;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
 }
 
 .speaker-image {
@@ -1262,6 +1379,18 @@ section {
     .speakers-dna,
     .cta-dna {
         display: none;
+    }
+    
+    /* Face Static Mobile */
+    .face-animation {
+        width: 110%;
+        height: 110%;
+        top: -10%;
+        left: -15%;
+        right: auto;
+        transform: scaleX(1);
+        opacity: 0.15;
+        filter: blur(1px);
     }
     
     .science-content {

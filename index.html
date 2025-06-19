@@ -8,8 +8,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=The+Seasons:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
 <body>
     <!-- DNA Animation Background -->
@@ -45,6 +47,12 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
+        <!-- Face Shadow Background -->
+        <div class="face-animation">
+            <svg viewBox="-140 -30 640 300" id="face-svg"> 
+            </svg>
+        </div>
+        
         <div class="hero-content">
             <div class="hero-text">
                 <h1 class="hero-title">
@@ -79,6 +87,7 @@
                     <div class="element dna"><i class="fas fa-dna"></i></div>
                     <div class="element microscope"><i class="fas fa-microscope"></i></div>
                 </div>
+                
                 <!-- Advanced DNA Animation Hero -->
                 <div class="hero-dna">
                     <canvas id="dna-canvas-hero"></canvas>
@@ -240,28 +249,30 @@
             </div>
             <div class="speakers-grid">
                 <div class="speaker-card">
-                    <div class="speaker-image">
-                                                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDMwMCA0MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIzMDAiIGhlaWdodD0iNDAwIiBmaWxsPSIjMzMzIi8+Cjx0ZXh0IHg9IjE1MCIgeT0iMjAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjRkZENzAwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTYiPkRyLiBBbGV4YW5kcmUgU2lsdmE8L3RleHQ+Cjwvc3ZnPg==" alt="Dr. Alexandre Silva">
-                        <div class="speaker-overlay">
-                            <div class="speaker-social">
-                                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                                <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
-                                <a href="#" class="social-icon"><i class="fas fa-envelope"></i></a>
+                    <div class="speaker-card-content">
+                        <div class="speaker-image">
+                                                        <img src="images/junior.jpeg" alt="Dr. Junior Pires">
+                            <div class="speaker-overlay">
+                                <div class="speaker-social">
+                                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                                    <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#" class="social-icon"><i class="fas fa-envelope"></i></a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="speaker-info">
-                        <h3 class="speaker-name">Dr. Alexandre Silva</h3>
-                        <p class="speaker-title">Dermatologista Especialista</p>
-                        <p class="speaker-speciality">Harmonização Facial</p>
-                        <div class="speaker-credentials">
-                            <span class="credential">CRM 12345-SP</span>
-                            <span class="credential">15+ anos</span>
-                        </div>
-                        <p class="speaker-bio">Especialista em harmonização facial com mais de 15 anos de experiência. Pioneiro em técnicas minimamente invasivas.</p>
-                        <div class="speaker-talk">
-                            <i class="fas fa-microphone-alt"></i>
-                            <span>"Tendências em Preenchimento Facial 2025"</span>
+                        <div class="speaker-info">
+                            <!-- <h3 class="speaker-name">Dr. Alexandre Silva</h3> -->
+                            <p class="speaker-title">Dermatologista Especialista</p>
+                            <p class="speaker-speciality">Harmonização Facial</p>
+                            <div class="speaker-credentials">
+                                <span class="credential">CRM 12345-SP</span>
+                                <span class="credential">15+ anos</span>
+                            </div>
+                            <p class="speaker-bio">Especialista em harmonização facial com mais de 15 anos de experiência. Pioneiro em técnicas minimamente invasivas.</p>
+                            <div class="speaker-talk">
+                                <i class="fas fa-microphone-alt"></i>
+                                <span>"Tendências em Preenchimento Facial 2025"</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -295,7 +306,7 @@
 
                 <div class="speaker-card">
                     <div class="speaker-image">
-                                                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDMwMCA0MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIzMDAiIGhlaWdodD0iNDAwIiBmaWxsPSIjMzMzIi8+Cjx0ZXh0IHg9IjE1MCIgeT0iMjAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjRkZENzAwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTYiPkRyLiBDYXJsb3MgTWVuZGVzPC90ZXh0Pgo8L3N2Zz4=" alt="Dr. Carlos Mendes">
+                                                    <img src="images/andreia.jpg" alt="Dra. Andréia">
                         <div class="speaker-overlay">
                             <div class="speaker-social">
                                 <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
@@ -305,7 +316,7 @@
                         </div>
                     </div>
                     <div class="speaker-info">
-                        <h3 class="speaker-name">Dr. Carlos Mendes</h3>
+                        <!-- <h3 class="speaker-name">Dr. Carlos Mendes</h3> -->
                         <p class="speaker-title">Médico Estético</p>
                         <p class="speaker-speciality">Tecnologias Avançadas</p>
                         <div class="speaker-credentials">
@@ -520,6 +531,8 @@
     </footer>
 
     <script src="dna-animation.js"></script>
+    <script src="face-animation.js"></script>
     <script src="script.js"></script>
+    <script src="update_speakers.js"></script>
 </body>
 </html> 
