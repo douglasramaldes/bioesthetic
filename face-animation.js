@@ -1,17 +1,7 @@
 // Face Animation using GSAP
 let distance = 169.87;
-let colors = [
-  "#ffe700",
-  "#ffb937",
-  "#FFA500",
-  "#ff5033",
-  "#e32f11",
-  "#a31c04",
-  "#e22467",
-  "#861576",
-  "#251586",
-];
-let numFaces = 9;
+let colors = ["#09d9d2", "#05a8a1"];
+let numFaces = 2;
 
 function createFaces() {
   const svg = document.querySelector("#face-svg");
