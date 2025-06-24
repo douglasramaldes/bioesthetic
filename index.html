@@ -33,7 +33,7 @@
                     <li><a href="#agenda" class="nav-link">Agenda</a></li>
                     <li><a href="#speakers" class="nav-link">Palestrantes</a></li>
                     <li><a href="#ticket-types" class="nav-link">Ingressos</a></li>
-                    <li><a href="#exhibitors" class="nav-link">Expositores</a></li>
+                    <!-- <li><a href="#exhibitors" class="nav-link">Expositores</a></li> -->
                     <li><a href="#organizers" class="nav-link">Organizadores</a></li>
                     <li><a href="#contact" class="nav-link">Contato</a></li>
                 </ul>
@@ -52,6 +52,10 @@
         <div class="face-animation">
             <svg viewBox="-140 -30 640 300" id="face-svg"> 
             </svg>
+            <!-- DNA Animation within Face (Mobile Only) -->
+            <div class="face-dna-mobile">
+                <canvas id="dna-canvas-face-mobile"></canvas>
+            </div>
         </div>
         
         <div class="hero-content">
@@ -1076,6 +1080,18 @@
         // Create faces for both tickets with better visibility
         createTicketFace('#face-svg-ticket-normal', 'rgba(255, 255, 255, 0.8)', 0.7);
         createTicketFace('#face-svg-ticket-vip', 'rgba(7, 190, 184, 1)', 0.8);
+
+        // Initialize DNA animation inside face for mobile
+        if (window.innerWidth <= 768) {
+            new DNAAnimation('dna-canvas-face-mobile', {
+                scale: 0.8,
+                opacity: 1.0,
+                speed: 1.0,
+                particleCount: 16,
+                radius: 3,
+                height: 5
+            });
+        }
     </script>
 </body>
 </html> 

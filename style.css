@@ -613,6 +613,11 @@ h1, h2, h3, h4, h5, h6,
     overflow: hidden;
 }
 
+/* DNA dentro da face - Esconder no desktop */
+.face-dna-mobile {
+    display: none;
+}
+
 #face-svg {
     width: 100%;
     height: 100%;
@@ -1960,14 +1965,16 @@ section {
     }
     
     .hero {
-        background: 
-            linear-gradient(135deg, rgba(0,0,0,0.9) 0%, rgba(45,27,105,0.8) 50%, rgba(0,0,0,0.95) 100%),
-            radial-gradient(circle at 50% 50%, rgba(7,190,184,0.08) 0%, transparent 60%);
-        background-size: cover, 100%;
+        background: var(--black);
     }
     
     .hero::before {
-        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid-mobile" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="0.3"/></pattern></defs><rect width="100" height="100" fill="url(%23grid-mobile)"/></svg>');
+        background: 
+            linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+            url('images/event.jpg');
+        background-size: cover, cover;
+        background-position: center, center;
+        opacity: 0.6;
     }
     
     .hero::after {
@@ -1978,14 +1985,44 @@ section {
         grid-template-columns: 1fr;
         text-align: center;
         gap: 2rem;
+        position: relative;
+        z-index: 5;
     }
     
     .hero-title {
         font-size: 2.5rem;
+        position: relative;
+        z-index: 6;
     }
     
     .year {
         font-size: 2rem;
+    }
+    
+    .hero-text {
+        position: relative;
+        z-index: 6;
+    }
+    
+    .hero-text .hero-title,
+    .hero-text .hero-subtitle,
+    .hero-text .hero-description,
+    .hero-text .hero-date,
+    .hero-text .hero-location {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    
+    .hero-date,
+    .hero-location {
+        justify-content: center;
+    }
+    
+    .hero-buttons {
+        position: relative;
+        z-index: 6;
+        margin-left: 0;
+        justify-content: center;
     }
     
     .about-content {
@@ -1994,8 +2031,26 @@ section {
     }
     
     .tab-buttons {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    
+    .tab-btn {
+        padding: 15px 20px;
+        font-size: 0.9rem;
+        min-width: auto;
+        flex: 1;
+        max-width: 120px;
+    }
+    
+    .tab-date {
+        font-size: 1.2rem;
+    }
+    
+    .tab-label {
+        font-size: 0.8rem;
     }
     
     .agenda-item {
@@ -2014,12 +2069,27 @@ section {
     
     .floating-elements {
         height: 200px;
+        position: relative;
+        z-index: 4;
     }
     
     .element {
         width: 60px;
         height: 60px;
         font-size: 1.5rem;
+        background: rgba(7, 190, 184, 0.1);
+        border: 2px solid rgba(7, 190, 184, 0.3);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--cyan);
+    }
+    
+    /* Hero visual mobile adjustments */
+    .hero-visual {
+        position: relative;
+        margin-top: 2rem;
     }
     
     .speakers-grid {
@@ -2045,24 +2115,55 @@ section {
         gap: 0.5rem;
     }
     
-    /* DNA Animations Mobile */
-    .hero-dna,
+    /* DNA Animations Mobile - Reabilitar o hero-dna */
+    .hero-dna {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 200px;
+        height: 250px;
+        z-index: 2;
+        opacity: 0.8;
+    }
+    
     .about-dna,
     .speakers-dna,
     .cta-dna {
         display: none;
     }
     
-    /* Face Static Mobile */
+    /* Face Animation Mobile - Reposicionar para onde estão os ícones */
     .face-animation {
-        width: 110%;
-        height: 110%;
-        top: -10%;
-        left: -15%;
-        right: auto;
-        transform: scaleX(1);
-        opacity: 0.4;
-        filter: blur(1px);
+        position: absolute;
+        top: auto;
+        bottom: -20px;
+        left: 70%;
+        transform: translateX(-50%);
+        width: 120%;
+        height: 280px;
+        opacity: 0.6;
+        filter: blur(0.5px);
+        z-index: 1;
+    }
+    
+    /* DNA dentro da face - Mobile apenas */
+    .face-dna-mobile {
+        position: absolute;
+        top: 50%;
+        left: 40%;
+        transform: translate(-50%, -50%);
+        width: 240px;
+        height: 200px;
+        z-index: 2;
+        opacity: 0.9;
+        display: block;
+    }
+    
+    .face-dna-mobile canvas {
+        width: 100%;
+        height: 100%;
     }
     
     .science-content {
