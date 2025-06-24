@@ -16,10 +16,12 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");
 
-hamburger.addEventListener("click", () => {
-  hamburger.classList.toggle("active");
-  navMenu.classList.toggle("active");
-});
+if (hamburger && navMenu) {
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+  });
+}
 
 // Fechar menu mobile ao clicar em um link
 document.querySelectorAll(".nav-link").forEach((n) =>
