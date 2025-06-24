@@ -293,3 +293,55 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+
+// Reposicionar speaker-social ao lado do nome no mobile
+document.addEventListener("DOMContentLoaded", function () {
+  function setupMobileLayout() {
+    if (window.innerWidth <= 768) {
+      document.querySelectorAll(".speaker-card").forEach((card) => {
+        const speakerName = card.querySelector(".speaker-name");
+        const speakerSocial = card.querySelector(".speaker-social");
+
+        if (
+          speakerName &&
+          speakerSocial &&
+          !speakerName.parentNode.classList.contains("speaker-name-social")
+        ) {
+          // Criar container para nome + social
+          const nameContainer = document.createElement("div");
+          nameContainer.className = "speaker-name-social";
+
+          // Colocar o nome e o social dentro do container
+          speakerName.parentNode.insertBefore(nameContainer, speakerName);
+          nameContainer.appendChild(speakerName);
+          nameContainer.appendChild(speakerSocial);
+        }
+      });
+    } else {
+      // Reverter para layout desktop
+      document.querySelectorAll(".speaker-name-social").forEach((container) => {
+        const speakerName = container.querySelector(".speaker-name");
+        const speakerSocial = container.querySelector(".speaker-social");
+        const speakerOverlay =
+          container.parentNode.querySelector(".speaker-overlay");
+
+        if (speakerName && speakerSocial && speakerOverlay) {
+          // Voltar nome para posição original
+          container.parentNode.insertBefore(speakerName, container);
+
+          // Voltar social para overlay
+          speakerOverlay.appendChild(speakerSocial);
+
+          // Remover container
+          container.remove();
+        }
+      });
+    }
+  }
+
+  // Configurar na inicialização
+  setupMobileLayout();
+
+  // Reconfigurar ao redimensionar a janela
+  window.addEventListener("resize", setupMobileLayout);
+});

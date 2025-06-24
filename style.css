@@ -1083,15 +1083,40 @@ section {
     transform: translateY(0);
 }
 
-/* Forçar ícones sociais visíveis no mobile */
+/* Reposicionar .speaker-social ao lado do nome no mobile */
 @media (max-width: 768px) {
-    .speaker-card .speaker-overlay {
-        opacity: 1 !important;
+    .speaker-overlay {
+        position: static;
+        background: transparent;
+        opacity: 1;
+        display: flex;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+        height: auto;
+        justify-content: flex-start;
     }
     
-    .speaker-card .speaker-social {
-        opacity: 1 !important;
-        transform: translateY(0) !important;
+    .speaker-social {
+        opacity: 1;
+        transform: translateY(0);
+        gap: 8px;
+        margin: 0;
+        position: static;
+    }
+    
+    .social-icon {
+        width: 28px;
+        height: 28px;
+        font-size: 14px;
+    }
+    
+    /* Container do nome + ícone social */
+    .speaker-name-social {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 5px;
     }
 }
 
