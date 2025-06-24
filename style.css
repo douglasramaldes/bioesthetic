@@ -468,6 +468,14 @@ h1, h2, h3, h4, h5, h6,
     z-index: 3;
 }
 
+.hero-location {
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+    /* align-items: center;
+    gap: 0.5rem;
+    z-index: 3; */
+}
+
 .hero-buttons {
     margin-left: 2rem;
     display: flex;
@@ -789,6 +797,7 @@ section {
 }
 
 .agenda-tabs {
+    margin-top: 10px;
     position: relative;
     z-index: 2;
 }
