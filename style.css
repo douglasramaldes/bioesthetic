@@ -1928,8 +1928,16 @@ section {
     }
     
     .logo-img {
-        height: 50px;
-        max-height: 50px;
+        /* height: 65px;
+        max-height: 65px; */
+        width: auto;
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: auto;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        object-fit: contain;
     }
     
     .hamburger {
