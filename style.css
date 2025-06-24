@@ -1575,6 +1575,17 @@ section {
         grid-template-columns: 1fr;
         gap: 40px;
         /* margin-top: 40px; */
+        display: flex;
+        flex-direction: column;
+    }
+    
+    /* Colocar o ingresso VIP primeiro no mobile */
+    .ticket-wrapper:nth-child(1) {
+        order: 2;
+    }
+    
+    .ticket-wrapper:nth-child(2) {
+        order: 1;
     }
     
     .ticket {
@@ -2247,5 +2258,11 @@ section {
     
     .cta-content h2 {
         font-size: 2rem;
+    }
+    
+    /* Reduzir tamanho do botão da seção CTA no mobile */
+    .btn-large {
+        padding: 1rem 2rem;
+        font-size: 1rem;
     }
 } 
