@@ -1083,6 +1083,55 @@ section {
     transform: translateY(0);
 }
 
+/* Mostrar ícones sociais no mobile sempre */
+@media (max-width: 768px) {
+    .speaker-social {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+        justify-content: center;
+        margin-top: 15px;
+        position: relative;
+        z-index: 10;
+    }
+    
+    .speaker-overlay {
+        position: static;
+        background: transparent;
+        opacity: 1 !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 0;
+    }
+}
+
+/* Suporte para dispositivos touch (iOS Safari) */
+@media (hover: none) and (pointer: coarse) {
+    .speaker-social {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+        justify-content: center;
+        margin-top: 15px;
+        position: relative;
+        z-index: 10;
+    }
+    
+    .speaker-overlay {
+        position: static;
+        background: transparent;
+        opacity: 1 !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 0;
+    }
+    
+    .speaker-card:hover .speaker-social {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+    }
+}
+
 .social-icon {
     width: 40px;
     height: 40px;
@@ -1094,6 +1143,17 @@ section {
     color: var(--black);
     text-decoration: none;
     transition: transform 0.3s ease;
+    font-size: 18px;
+}
+
+/* Ícones sociais maiores no mobile */
+@media (max-width: 768px) {
+    .social-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+        margin: 0 5px;
+    }
 }
 
 .social-icon:hover {
@@ -2149,7 +2209,8 @@ body.menu-active {
     .speaker-card {
         max-width: 400px;
         margin: 0 auto;
-        height: 550px;
+        height: auto;
+        min-height: 600px;
         display: flex;
         flex-direction: column;
     }
@@ -2160,7 +2221,7 @@ body.menu-active {
     }
     
     .speaker-info {
-        /* padding: 2rem; */
+        padding: 25px;
         flex: 1;
         display: flex;
         flex-direction: column;
