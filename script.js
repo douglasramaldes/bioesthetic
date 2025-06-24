@@ -93,17 +93,7 @@ function animateNumber(element) {
   }, 40);
 }
 
-// Header transparente que fica sólido ao fazer scroll
-window.addEventListener("scroll", () => {
-  const header = document.querySelector(".header");
-  if (window.scrollY > 100) {
-    header.style.background = "rgba(255, 255, 255, 0.98)";
-    header.style.backdropFilter = "blur(15px)";
-  } else {
-    header.style.background = "rgba(255, 255, 255, 0.95)";
-    header.style.backdropFilter = "blur(10px)";
-  }
-});
+// Header com cor fixa - removido efeito de mudança no scroll
 
 // Animação de entrada para elementos
 const fadeInObserver = new IntersectionObserver(

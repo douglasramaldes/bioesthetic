@@ -32,8 +32,9 @@
                     <li><a href="#about" class="nav-link">Sobre</a></li>
                     <li><a href="#agenda" class="nav-link">Agenda</a></li>
                     <li><a href="#speakers" class="nav-link">Palestrantes</a></li>
-                    <li><a href="#organizers" class="nav-link">Organizadores</a></li>
+                    <li><a href="#ticket-types" class="nav-link">Ingressos</a></li>
                     <li><a href="#exhibitors" class="nav-link">Expositores</a></li>
+                    <li><a href="#organizers" class="nav-link">Organizadores</a></li>
                     <li><a href="#contact" class="nav-link">Contato</a></li>
                 </ul>
                 <div class="hamburger">
@@ -131,7 +132,7 @@
                         <div class="stat-label">Palestrantes</div>
                     </div>
                     <div class="stat">
-                        <div class="stat-number">30+</div>
+                        <div class="stat-number">20+</div>
                         <div class="stat-label">Expositores</div>
                     </div>
                 </div>
@@ -723,38 +724,117 @@
         </div>
     </section>
 
-    <!-- Organizers Section -->
-    <section id="organizers" class="organizers">
+    <!-- Ticket Types Section -->
+    <section id="ticket-types" class="ticket-types">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Organizadores</h2>
-                <p class="section-subtitle">Profissionais renomados à frente do evento</p>
+                <h2 class="section-title">Tipos de Ingresso</h2>
+                <p class="section-subtitle">Escolha o plano ideal para sua experiência</p>
             </div>
-            <div class="organizers-grid">
-                <div class="organizer-card">
-                    <div class="organizer-image">
-                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjMzMzIi8+Cjx0ZXh0IHg9IjEwMCIgeT0iMTAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjRkZENzAwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTQiPk9yZ2FuaXphZG9yIDE8L3RleHQ+Cjwvc3ZnPg==" alt="Organizador 1">
-                    </div>
-                    <div class="organizer-info">
-                        <h3>Dr. [Nome]</h3>
-                        <p>Especialista em Dermatologia Estética</p>
-                        <div class="organizer-social">
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                            <a href="#"><i class="fab fa-linkedin"></i></a>
-                        </div>
+            <div class="tickets-grid">
+                <!-- Congressista Ticket -->
+                <div class="ticket-wrapper">
+                    <main class="ticket-app">
+                        <section class="ticket ticket-normal">
+                            <header class="front">
+                                <img class="logo" src="images/Bioestheticlogo.png" alt="Bioesthetic" />
+                                <div class="ticket-info">
+                                    <h2>CONGRESSISTA</h2>
+                                    <div class="price">R$ 597 <span>à vista</span></div>
+                                </div>
+                                <aside class="divider">
+                                    <div class="features">
+                                        <p>• Acesso aos dois dias</p>
+                                        <p>• Certificado nacional</p>
+                                        <p>• Kit do congressista</p>
+                                    </div>
+                                </aside>
+                            </header>
+                            <section class="back">
+                                <p class="id_number">N° 00001</p>
+                                <div class="data">
+                                    <p class="event-name">BIOESTHETIC BRASIL 2025</p>
+                                    <p class="event-subtitle">Congresso de Estética Avançada</p>
+                                </div>
+                                <aside class="divider">
+                                    <div>
+                                        <h3>22-23 Nov 2025 / Barra da Tijuca, RJ</h3>
+                                        <div class="ticket-face-dna">
+                                            <div class="face-animation-ticket">
+                                                <svg viewBox="-140 -30 640 300" id="face-svg-ticket-normal"></svg>
+                                            </div>
+                                            <div class="ticket-dna">
+                                                <canvas id="dna-canvas-ticket-normal"></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </aside>
+                            </section>
+                        </section>
+                    </main>
+                    <div class="ticket-button">
+                        <a href="https://www.sympla.com.br/evento/bioesthetic-brasil-2025/2769402" 
+                           target="_blank" class="btn btn-ticket">
+                            <i class="fas fa-ticket-alt"></i>
+                            Comprar Ingresso
+                        </a>
                     </div>
                 </div>
-                <div class="organizer-card">
-                    <div class="organizer-image">
-                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjMzMzIi8+Cjx0ZXh0IHg9IjEwMCIgeT0iMTAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjRkZENzAwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTQiPk9yZ2FuaXphZG9yIDI8L3RleHQ+Cjwvc3ZnPg==" alt="Organizador 2">
-                    </div>
-                    <div class="organizer-info">
-                        <h3>Dra. [Nome]</h3>
-                        <p>Especialista em Medicina Estética</p>
-                        <div class="organizer-social">
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                            <a href="#"><i class="fab fa-linkedin"></i></a>
-                        </div>
+
+                <!-- VIP Ticket -->
+                <div class="ticket-wrapper">
+                    <main class="ticket-app" id="vip-app">
+                        <section class="ticket ticket-vip">
+                            <header class="front">
+                                <div class="holo"></div>
+                                <img class="logo" src="images/Bioestheticlogo.png" alt="Bioesthetic" />
+                                <div class="ticket-info">
+                                    <h2>EXCLUSIVO VIP</h2>
+                                    <div class="price">12x R$ 192,06 <span>ou à vista</span></div>
+                                </div>
+                                <aside class="divider">
+                                    <div class="features">
+                                        <p>• Acesso aos dois dias</p>
+                                        <p>• Certificado nacional</p>
+                                        <p>• Kit do congressista</p>
+                                        <p class="vip-feature">• Jantar científico VIP</p>
+                                        <p class="vip-feature">• Lounge VIP exclusivo</p>
+                                        <p class="vip-feature">• Assentos VIP reservados</p>
+                                    </div>
+                                </aside>
+                            </header>
+                            <section class="back">
+                                <div class="holo"></div>
+                                <p class="id_number">N° VIP001</p>
+                                <div class="data">
+                                    <p class="event-name">BIOESTHETIC BRASIL 2025</p>
+                                    <p class="event-subtitle">Congresso de Estética Avançada</p>
+                                </div>
+                                <aside class="divider">
+                                    <div>
+                                        <div style="display: flex; align-items: center; gap: 10px;">
+                                            <i class="fas fa-crown"></i>
+                                            <h3>21-22-23 Nov 2025 / Barra da Tijuca, RJ</h3>
+                                        </div>
+                                        <div class="ticket-face-dna">
+                                            <div class="face-animation-ticket">
+                                                <svg viewBox="-140 -30 640 300" id="face-svg-ticket-vip"></svg>
+                                            </div>
+                                            <div class="ticket-dna">
+                                                <canvas id="dna-canvas-ticket-vip"></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </aside>
+                            </section>
+                        </section>
+                    </main>
+                    <div class="ticket-button">
+                        <a href="https://www.sympla.com.br/evento/bioesthetic-brasil-2025/2769402" 
+                           target="_blank" class="btn btn-ticket-vip">
+                            <i class="fas fa-crown"></i>
+                            Comprar VIP
+                        </a>
                     </div>
                 </div>
             </div>
@@ -791,6 +871,38 @@
         </div>
     </section>
 
+    <!-- Organization Section -->
+    <section id="organizers" class="organizers">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Realização</h2>
+                <p class="section-subtitle">Grupo Promover - Referência em estética avançada</p>
+            </div>
+            <div class="organization-container">
+                <div class="organization-card">
+                    <div class="organization-image">
+                        <img src="images/grupopromover.jpg" alt="Grupo Promover">
+                    </div>
+                    <div class="organization-info">
+                        <h3>Conheça nossos cursos e nossa pós graduação</h3>
+                        <div class="organization-links">
+                            <a href="https://www.promovercursos.com.br" target="_blank" class="organization-link">
+                                <i class="fas fa-graduation-cap"></i>
+                                <span>Cursos</span>
+                            </a>
+                            <a href="https://www.promoveracademy.com.br" target="_blank" class="organization-link">
+                                <i class="fas fa-university"></i>
+                                <span>Pós Graduação</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
     <!-- CTA Section -->
     <section class="cta">
         <!-- DNA Animation CTA -->
@@ -820,20 +932,18 @@
                 </div>
                 <div class="footer-section">
                     <h4>Contato</h4>
-                    <p>Email: contato@bioestheticbrasil.com.br</p>
-                    <p>Telefone: (11) 99999-9999</p>
+                    <p>Email: contatobioestheticbrasil@gmail.com</p>
+                    <p>Telefone: (21) 97142-2068</p>
                 </div>
                 <div class="footer-section">
                     <h4>Redes Sociais</h4>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com/bioestheticbrasil"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Bioesthetic Brasil. Todos os direitos reservados.</p>
+                <p>&copy; 2025 Bioesthetic Brasil by Grupo Promover. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
@@ -842,5 +952,127 @@
     <script src="face-animation.js"></script>
     <script src="script.js"></script>
     <script src="update_speakers.js"></script>
+    <script>
+        // Ticket Animations Function
+        function createTicketAnimations(appId, speed = 12) {
+            const app = document.getElementById(appId);
+            if (!app) return;
+
+            const r = gsap.timeline({ repeat: -1 });
+            const o = gsap.timeline({ repeat: -1 });
+            const h = gsap.timeline({ repeat: -1 });
+
+            const ticket = app.querySelector('.ticket');
+            
+            if (ticket) {
+                ticket.addEventListener("mouseenter", () => {
+                    r.pause();
+                    o.pause();
+                    h.pause();
+                });
+                
+                ticket.addEventListener("mouseleave", () => {
+                    r.play();
+                    o.play();
+                    h.play();
+                });
+
+                r.to(`#${appId}`, {
+                    "--r": "180deg",
+                    "--p": "0%",
+                    duration: speed,
+                    ease: "sine.in"
+                });
+                r.to(`#${appId}`, {
+                    "--r": "360deg",
+                    "--p": "100%",
+                    duration: speed,
+                    ease: "sine.out"
+                });
+                
+                o.to(`#${appId}`, {
+                    "--o": 1,
+                    duration: speed / 2,
+                    ease: "power1.in"
+                });
+                o.to(`#${appId}`, {
+                    "--o": 0,
+                    duration: speed / 2,
+                    ease: "power1.out"
+                });
+
+                h.to(`#${appId}`, {
+                    "--h": "100%",
+                    duration: speed / 2,
+                    ease: "sine.in"
+                });
+                h.to(`#${appId}`, {
+                    "--h": "50%",
+                    duration: speed / 2,
+                    ease: "sine.out"
+                });
+                h.to(`#${appId}`, {
+                    "--h": "0%",
+                    duration: speed / 2,
+                    ease: "sine.in"
+                });
+                h.to(`#${appId}`, {
+                    "--h": "50%",
+                    duration: speed / 2,
+                    ease: "sine.out"
+                });
+            }
+        }
+
+        // Initialize animations for both tickets
+        createTicketAnimations('vip-app', 14); // VIP ticket slightly slower
+        
+        // Add normal ticket animation
+        const normalTicketApp = document.querySelector('.ticket-app:not(#vip-app)');
+        if (normalTicketApp) {
+            normalTicketApp.id = 'normal-app';
+            createTicketAnimations('normal-app', 16); // Normal ticket even slower
+        }
+
+        // Initialize DNA animations for tickets
+        new DNAAnimation('dna-canvas-ticket-normal', {
+            scale: 0.4,
+            opacity: 0.7,
+            speed: 0.8,
+            particleCount: 16,
+            radius: 3,
+            height: 5
+        });
+
+        new DNAAnimation('dna-canvas-ticket-vip', {
+            scale: 0.4,
+            opacity: 0.8,
+            speed: 1.0,
+            particleCount: 16,
+            radius: 3,
+            height: 5
+        });
+
+        // Create static faces for tickets
+        function createTicketFace(svgId, color, opacity = 0.6) {
+            const svg = document.querySelector(svgId);
+            if (!svg) return;
+
+            let pathEl = document.createElementNS("http://www.w3.org/2000/svg", "path");
+            pathEl.setAttribute(
+                "d",
+                "M169.87 26.318006 c 29.3,24.77 29.07,40.97 19.24,85.749994 -0.53,10.83 14.07,-3.14 18.13,7.25 10.24,9.01 4.88,9.33 5,16.38 5.9,9.29 -5.01,16.41 -1.87,20.75 -0.93,13.28 -8.42,20.29 -19.5,33 -8.41,14.51 -38.2,-1.28 -38.38,-1.25 -2.68,1.13 9.3,18.36 21.62,28.88 20.4,13.44 39.98,56.17 48.13,79.37 0,0 -221.25000843,-0.37 -221.25000843,-0.87 17.12000043,-31.59 35.20000043,-79.82 75.00000043,-69.63 2.4,-24.69 0.51,-35.26 -26.62,-60 -5.88,-3.37 -18,-5.75 -29.13,-5.75 -31.090001,-3.55 -8.73,-21.27 -15.2500004,-29.25 -2,-5.25 -0.88,-8.25 3,-8.25 3.7500004,0 3.8800004,-1.5 0.25,-3.13 -8.98000023,-4.56 0.76,-11.59 2.0000004,-14.87 0,-0.62 -2.7500004,-2.38 -5.5000004,-5.499996 -16.9500006,-22.589998 21.9600004,-9.39 25.8700004,-39.999998 0.63,-6.13 2,-9 9.88,-20.88 38.52,-64.8 117.690008,-22.07 129.380008,-12z"
+            );
+            pathEl.style.fill = "none";
+            pathEl.style.stroke = color;
+            pathEl.style.strokeWidth = "2";
+            pathEl.style.opacity = opacity;
+            svg.appendChild(pathEl);
+        }
+
+        // Create faces for both tickets with better visibility
+        createTicketFace('#face-svg-ticket-normal', 'rgba(255, 255, 255, 0.8)', 0.7);
+        createTicketFace('#face-svg-ticket-vip', 'rgba(7, 190, 184, 1)', 0.8);
+    </script>
 </body>
 </html> 
