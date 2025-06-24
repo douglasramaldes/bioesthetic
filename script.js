@@ -20,6 +20,9 @@ if (hamburger && navMenu) {
   hamburger.addEventListener("click", () => {
     hamburger.classList.toggle("active");
     navMenu.classList.toggle("active");
+
+    // Adicionar/remover classe do body para controlar overflow e background
+    document.body.classList.toggle("menu-active");
   });
 }
 
@@ -28,6 +31,7 @@ document.querySelectorAll(".nav-link").forEach((n) =>
   n.addEventListener("click", () => {
     hamburger.classList.remove("active");
     navMenu.classList.remove("active");
+    document.body.classList.remove("menu-active");
   })
 );
 
