@@ -1,0 +1,33 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://bioestheticbrasil.com/sitemap.xml
+
+# Block access to sensitive files
+Disallow: /package.json
+Disallow: /README.md
+Disallow: /*.json$
+
+# Allow access to important assets
+Allow: /images/
+Allow: /style.css
+Allow: /script.js
+Allow: /*.js
+Allow: /*.css
+
+# Crawl delay (optional - helps with server load)
+Crawl-delay: 1
+
+# Specific rules for different bots
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: / 

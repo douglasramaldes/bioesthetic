@@ -1910,6 +1910,95 @@ section {
     margin-bottom: 40px;
 }
 
+/* FAQ Section */
+.faq {
+    padding: 4rem 0;
+    background: var(--black);
+    position: relative;
+}
+
+.faq::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--gradient-black-cyan);
+    opacity: 0.05;
+    z-index: 1;
+}
+
+.faq .container {
+    position: relative;
+    z-index: 2;
+}
+
+.faq .section-title {
+    color: var(--white);
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 3rem;
+}
+
+.faq .section-subtitle {
+    color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.faq-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(7, 190, 184, 0.3);
+    margin-bottom: 1.5rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow-cyan);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.faq-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(7, 190, 184, 0.4);
+    border-color: var(--cyan);
+}
+
+.faq-item h3 {
+    background: var(--gradient-cyan);
+    color: var(--black);
+    padding: 1.5rem;
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    font-family: var(--font-heading);
+    border-bottom: 2px solid var(--accent);
+    transition: all 0.3s ease;
+}
+
+.faq-item:hover h3 {
+    background: var(--gradient-secondary);
+    color: var(--black);
+}
+
+.faq-item p {
+    padding: 1.5rem;
+    margin: 0;
+    line-height: 1.7;
+    color: var(--white);
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.faq-item p strong {
+    color: var(--cyan);
+    font-weight: 600;
+}
+
 /* Footer */
 .footer {
     background: var(--black);
@@ -2408,5 +2497,20 @@ body.menu-active {
     
     .whatsapp-text {
         font-size: 12px;
+    }
+    
+    /* FAQ Mobile */
+    .faq .section-title {
+        font-size: 2rem;
+    }
+    
+    .faq-item h3 {
+        padding: 1rem;
+        font-size: 1rem;
+    }
+    
+    .faq-item p {
+        padding: 1rem;
+        font-size: 0.9rem;
     }
 } 

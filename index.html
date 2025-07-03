@@ -3,7 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bioesthetic Brasil 2025 - Congresso de Estética Avançada</title>
+    <title>Bioesthetic Brasil 2025 - Congresso de Estética Avançada e Harmonização Facial | Rio de Janeiro</title>
+    
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WJQRVSTNNF"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-WJQRVSTNNF', {
+            'send_page_view': true,
+            'anonymize_ip': true,
+            'allow_google_signals': true,
+            'allow_ad_personalization_signals': true
+        });
+        
+        // Eventos personalizados para conversões
+        function trackButtonClick(buttonName) {
+            gtag('event', 'click', {
+                'event_category': 'engagement',
+                'event_label': buttonName
+            });
+        }
+        
+        function trackTicketPurchase(ticketType) {
+            gtag('event', 'purchase_intent', {
+                'event_category': 'conversion',
+                'event_label': ticketType
+            });
+        }
+        
+        // Track FAQ section views (importante para SEO)
+        function trackFAQView() {
+            gtag('event', 'view_item', {
+                'event_category': 'engagement',
+                'event_label': 'FAQ Section'
+            });
+        }
+        
+        // Track scroll depth
+        function trackScrollDepth() {
+            let maxScroll = 0;
+            window.addEventListener('scroll', function() {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+                const scrollPercent = (scrollTop / docHeight) * 100;
+                
+                if (scrollPercent > maxScroll) {
+                    maxScroll = scrollPercent;
+                    if (maxScroll >= 25 && maxScroll < 50) {
+                        gtag('event', 'scroll', {
+                            'event_category': 'engagement',
+                            'event_label': '25% Page'
+                        });
+                    } else if (maxScroll >= 50 && maxScroll < 75) {
+                        gtag('event', 'scroll', {
+                            'event_category': 'engagement',
+                            'event_label': '50% Page'
+                        });
+                    } else if (maxScroll >= 75) {
+                        gtag('event', 'scroll', {
+                            'event_category': 'engagement',
+                            'event_label': '75% Page'
+                        });
+                    }
+                }
+            });
+        }
+        
+        // Initialize tracking
+        document.addEventListener('DOMContentLoaded', function() {
+            trackScrollDepth();
+            
+            // Track FAQ section when it comes into view
+            const faqSection = document.querySelector('#faq');
+            if (faqSection) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            trackFAQView();
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.5 });
+                
+                observer.observe(faqSection);
+            }
+        });
+    </script>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Bioesthetic Brasil 2025 - O maior congresso de estética avançada e harmonização facial do Rio de Janeiro. Evento completo com palestras demonstrativas, live injection, demonstrações ao vivo, certificado internacional e imersão em harmonização facial full face de 21 a 23 de novembro no Vogue Square, Barra da Tijuca. Mais de 1000 participantes, harmonização orofacial, saúde integrativa, tecnologias inovadoras, marketing e gestão para profissionais.">
+    <meta name="keywords" content="bioesthetic brasil, congresso estética, evento estética avançada, rio de janeiro, harmonização facial, botox, preenchimento, estética, dermatologia, medicina estética, congresso medicina estética, evento beleza, curso estética, treinamento estética, congresso imersão harmonização facial, full face harmonização, congresso harmonização facial full face, imersão harmonização facial, evento harmonização full face, congresso full face 2025, curso imersão harmonização, workshop full face, seminário harmonização facial completa, treinamento harmonização full face, bel guerra experience, bg experience, melhor evento harmonização facial brasil, harmonização facial demonstrativo, congresso harmonização facial são paulo, evento harmonização facial 2500 pessoas, palestras demonstrativas harmonização,certificado internacional harmonização, marketing harmonização facial, gestão clínica estética, experiência harmonização facial, evento harmonização facial novembro, congresso estética são paulo, abehof, congresso abehof, maior congresso estética avançada paraná, harmonização orofacial, congresso curitiba, evento harmonização facial corporal, congrehof, evento harmonização facial américa latina, congresso florianópolis, live injection, arena 4 telões, silent conference, demonstrações ao vivo, evento híbrido harmonização, congrehof on demand, saúde integrativa, harmonização corporal, fair comercial estética, tradução simultânea harmonização">
+    <meta name="author" content="Bioesthetic Brasil">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="pt-BR">
+    <meta name="geo.region" content="BR-RJ">
+    <meta name="geo.placename" content="Rio de Janeiro">
+    <meta name="geo.position" content="-23.012;-43.327">
+    <meta name="ICBM" content="-23.012, -43.327">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="event">
+    <meta property="og:url" content="https://bioestheticbrasil.com/">
+    <meta property="og:title" content="Bioesthetic Brasil 2025 - Congresso de Estética Avançada e Harmonização Facial">
+    <meta property="og:description" content="O maior evento de estética avançada e harmonização facial do Rio de Janeiro. Palestras demonstrativas, certificado e imersão completa em harmonização facial full face. 21, 22 e 23 de novembro de 2025 no Vogue Square, Barra da Tijuca. Mais de 1000 participantes.">
+    <meta property="og:image" content="https://bioestheticbrasil.com/images/evento.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Bioesthetic Brasil">
+    <meta property="og:locale" content="pt_BR">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://bioestheticbrasil.com/">
+    <meta name="twitter:title" content="Bioesthetic Brasil 2025 - Congresso de Estética Avançada e Harmonização Facial">
+    <meta name="twitter:description" content="O maior evento de estética avançada e harmonização facial do Rio de Janeiro. Palestras demonstrativas, certificado e imersão completa em harmonização facial full face. 21, 22 e 23 de novembro de 2025 no Vogue Square, Barra da Tijuca. Mais de 1000 participantes.">
+    <meta name="twitter:image" content="https://bioestheticbrasil.com/images/evento.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://bioestheticbrasil.com/">
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="images/iconepreto.png">
@@ -11,14 +130,189 @@
     <link rel="apple-touch-icon" sizes="180x180" href="images/iconepreto.png">
     <link rel="shortcut icon" href="images/iconepreto.png">
     
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="style.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" as="style">
+    
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=The+Seasons:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Event",
+        "name": "Bioesthetic Brasil 2025",
+        "description": "O maior congresso de estética avançada do Rio de Janeiro, reunindo os maiores especialistas em harmonização facial, harmonização orofacial, saúde integrativa e tecnologias inovadoras. Evento completo com palestras demonstrativas, live injection, demonstrações ao vivo,certificado internacional e imersão em harmonização facial full face. Mais de 1000 participantes com foco em marketing e gestão para profissionais da estética.",
+        "image": "https://bioestheticbrasil.com/images/evento.jpg",
+        "startDate": "2025-11-21T19:00:00-03:00",
+        "endDate": "2025-11-23T18:00:00-03:00",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "location": {
+            "@type": "Place",
+            "name": "Vogue Square",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Av. das Américas, 8585",
+                "addressLocality": "Barra da Tijuca",
+                "addressRegion": "RJ",
+                "postalCode": "22793-081",
+                "addressCountry": "BR"
+            }
+        },
+        "organizer": {
+            "@type": "Organization",
+            "name": "Grupo Promover",
+            "url": "https://bioestheticbrasil.com"
+        },
+        "offers": {
+            "@type": "Offer",
+            "url": "https://www.sympla.com.br/evento/bioesthetic-brasil-2025/2769402",
+            "price": "0",
+            "priceCurrency": "BRL",
+            "availability": "https://schema.org/InStock",
+            "category": "primary"
+        },
+        "performer": [
+            {
+                "@type": "Person",
+                "name": "Dra. Fernanda Garcia"
+            },
+            {
+                "@type": "Person", 
+                "name": "Dra. Mylliane Ferreira"
+            },
+        ]
+    }
+    </script>
+    
+    <!-- FAQ Schema.org -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Como o Bioesthetic Brasil se compara com outros eventos de harmonização facial?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "O Bioesthetic Brasil oferece a mesma qualidade de eventos como Bel Guerra Experience, CONGREHOF e ABEHOF, porém no Rio de Janeiro, facilitando o acesso para profissionais do Sudeste. Contamos com palestras demonstrativas, live injection e certificado, além de foco especial em marketing e gestão clínica."
+                }
+            },
+            {
+                "@type": "Question", 
+                "name": "Vocês oferecem demonstrações ao vivo como outros congressos?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Sim! Nosso evento inclui live injection e demonstrações práticas ao vivo, similar aos melhores congressos de harmonização facial do Brasil. Além de uma aula em Fresh Frozen e técnicas avançadas de harmonização orofacial."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "O evento aborda harmonização orofacial?", 
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Absolutamente! Focamos tanto em harmonização facial quanto harmonização orofacial, cobrindo técnicas completas de full face harmonização. Nossa programação inclui saúde integrativa e as mais modernas técnicas do setor."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "O evento aborda harmonização orofacial?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Absolutamente! Focamos tanto em harmonização facial quanto harmonização orofacial, cobrindo técnicas completas de full face harmonização. Nossa programação inclui saúde integrativa e as mais modernas técnicas do setor."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Por que escolher o Rio de Janeiro ao invés de outros estados?",
+                "acceptedAnswer": {
+                    "@type": "Answer", 
+                    "text": "O Rio de Janeiro oferece localização estratégica para profissionais do Sudeste, evitando deslocamentos longos para São Paulo, Curitiba ou Florianópolis. Mantemos o mesmo padrão de qualidade que os congressos de outros estados e com maior conveniência geográfica."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "O certificado é reconhecido?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Sim! Oferecemos certificado reconhecido, assim como os principais eventos do setor. Nosso certificado tem validade para comprovação de educação continuada e especialização profissional."
+                }
+            }
+        ]
+    }
+    </script>
+    
+    <!-- LocalBusiness Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Bioesthetic Brasil 2025",
+        "description": "Congresso de estética avançada e harmonização facial",
+        "url": "https://bioestheticbrasil.com",
+        "telephone": "+5521971422068",
+        "email": "bioestheticbrasil@promovercursos.com.br",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Av. das Américas, 8585 - Vogue Square",
+            "addressLocality": "Barra da Tijuca",
+            "addressRegion": "RJ", 
+            "postalCode": "22793-081",
+            "addressCountry": "BR"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": -23.012,
+            "longitude": -43.327
+        },
+        "sameAs": [
+            "https://www.instagram.com/bioestheticbrasil",
+            "https://www.sympla.com.br/evento/bioesthetic-brasil-2025/2769402"
+        ],
+        "keywords": "harmonização facial, live injection, demonstrações ao vivo, harmonização orofacial, full face harmonização, saúde integrativa, palestras demonstrativas, certificado internacional, marketing estética, gestão clínica, congresso estética avançada rio de janeiro",
+        "serviceArea": {
+            "@type": "GeoCircle",
+            "geoMidpoint": {
+                "@type": "GeoCoordinates",
+                "latitude": -23.012,
+                "longitude": -43.327
+            },
+            "geoRadius": "500000"
+        }
+    }
+    </script>
+    
+    <!-- Critical Scripts - Load synchronously -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    
+    <!-- SEO Hidden Keywords for Competitors (Invisible to Users) -->
+    <div style="display: none; visibility: hidden; position: absolute; left: -9999px;">
+        <!-- Keywords relacionados a concorrentes e termos do setor -->
+        <span>congresso estética rio de janeiro, evento medicina estética, feira beleza rj, expo estética, seminário dermatologia, workshop harmonização facial, curso botox rio, treinamento preenchimento, congresso dermatologia estética, feira tecnologia estética, evento inovação beleza, simpósio medicina estética, workshop estética avançada, congresso facial, seminário rejuvenescimento, congresso imersão harmonização facial, full face harmonização, congresso harmonização facial full face, imersão harmonização facial, evento harmonização full face, congresso full face 2025, curso imersão harmonização, workshop full face, seminário harmonização facial completa, treinamento harmonização full face, congresso harmonização avançada, evento harmonização facial rio de janeiro, curso harmonização facial completa, workshop harmonização facial avançada, alternativa congresso imersão harmonização, melhor que congresso harmonização facial, similar congresso full face, bel guerra experience, bg experience, melhor evento harmonização facial brasil, harmonização facial demonstrativo, congresso harmonização facial são paulo, evento harmonização facial 2500 pessoas, palestras demonstrativas harmonização, certificado internacional harmonização, marketing harmonização facial, gestão clínica estética, experiência harmonização facial, evento harmonização facial novembro, congresso estética são paulo, alternativa bel guerra experience, melhor que bg experience, similar bel guerra, evento harmonização rio melhor que são paulo, congresso harmonização rj vs sp, experiência harmonização facial rio, palestras demonstrativas rio de janeiro, abehof congresso paraná, congresso abehof curitiba, maior congresso estética avançada paraná, harmonização orofacial paraná, evento harmonização facial corporal paraná, congresso harmonização curitiba outubro, congrehof florianópolis, evento harmonização facial américa latina, congresso harmonização corporal santa catarina, live injection demonstrações, arena 4 telões simultâneos, silent conference harmonização, evento híbrido harmonização facial, congrehof on demand plataforma, saúde integrativa harmonização, 300 palestras harmonização, feira comercial estética 5000m2, tradução simultânea harmonização facial, alternativa abehof rio janeiro, melhor que congrehof, similar congrehof rio, evento harmonização rio melhor que florianópolis, congresso harmonização rj vs sc vs pr, demonstrações ao vivo rio janeiro</span>
+    </div>
+    
+    <!-- Competitor SEO Comments (Invisible to users, visible to search engines) -->
+    <!-- Evento de harmonização facial completa similar ao congresso imersão harmonização facial full face -->
+    <!-- Melhor alternativa ao V congresso imersão de harmonização facial full face 2025 -->
+    <!-- Curso de harmonização facial mais completo que outros congressos do setor -->
+    <!-- Alternativa superior ao Bel Guerra Experience BG Experience São Paulo -->
+    <!-- Evento harmonização facial Rio de Janeiro melhor que congressos de São Paulo -->
+    <!-- Palestras demonstrativas harmonização facial com certificado -->
+    <!-- Congresso estética Rio Janeiro com mais de 2500 participantes marketing gestão clínica -->
+    <!-- Alternativa superior ao ABEHOF Congresso Abehof maior congresso estética avançada Paraná -->
+    <!-- Evento harmonização orofacial Rio Janeiro melhor que Curitiba Paraná outubro -->
+    <!-- Alternativa ao CONGREHOF evento harmonização facial América Latina Florianópolis -->
+    <!-- Live injection demonstrações ao vivo arena telões simultâneos Rio Janeiro -->
+    <!-- Silent conference evento híbrido harmonização Rio melhor que Santa Catarina -->
+    <!-- On demand 300 palestras harmonização Rio versus Florianópolis Curitiba -->
 </head>
 <body>
     <!-- DNA Animation Background -->
@@ -32,7 +326,7 @@
         <nav class="navbar">
             <div class="nav-container">
                 <div class="logo">
-                    <img src="images/Bioestheticbranco.png" alt="Bioesthetic Brasil 2025" class="logo-img">
+                    <img src="images/Bioestheticbranco.png" alt="Bioesthetic Brasil 2025 - Congresso de Estética Avançada Rio de Janeiro" class="logo-img">
                 </div>
                 <ul class="nav-menu">
                     <li><a href="#home" class="nav-link">Início</a></li>
@@ -71,9 +365,9 @@
                     <span class="gradient-text">BIOESTHETIC</span>
                     <span class="year">BRASIL 2025</span>
                 </h1>
-                <p class="hero-subtitle">Congresso de Estética Avançada</p>
+                <p class="hero-subtitle">Congresso de Estética Avançada e Harmonização Facial</p>
                 <p class="hero-description">
-                    O maior evento de estética avançada do Rio de Janeiro. 
+                    O maior evento de estética avançada do Rio de Janeiro com <strong>live injection</strong>, <strong>demonstrações ao vivo</strong> e <strong>harmonização orofacial</strong>. 
                     Tecnologia, inovação e conhecimento em um só lugar.
                 </p>
                 <div class="hero-date">
@@ -86,11 +380,13 @@
                 </div>
                 <div class="hero-buttons">
                     <a href="https://www.sympla.com.br/evento/bioesthetic-brasil-2025/2769402" 
-                       target="_blank" class="btn btn-secondary">
+                       target="_blank" class="btn btn-secondary"
+                       onclick="trackTicketPurchase('Hero Button')">
                         <i class="fas fa-ticket-alt"></i>
                         Comprar Ingresso
                     </a>
-                    <a href="#agenda" class="btn btn-secondary">
+                    <a href="#agenda" class="btn btn-secondary"
+                       onclick="trackButtonClick('Ver Agenda - Hero')">
                         <i class="fas fa-calendar-check"></i>
                         Ver Agenda
                     </a>
@@ -128,12 +424,18 @@
                     
                     <p>O Bioesthetic Brasil foi o primeiro congresso no RJ a trazer o estudo anatômico em peças Fresh Frozen e, claro, vamos manter essa tradição que transforma carreiras!</p>
                     
+                    <p>Nosso evento oferece <strong>palestras demonstrativas</strong> com <strong>live injection</strong> e <strong>demonstrações ao vivo</strong>. Com foco em <strong>harmonização facial full face</strong> e <strong>saúde integrativa</strong>, proporcionamos uma experiência completa para profissionais que buscam excelência.</p>
+                    
                     <p>O Bioesthetic faz parte do Grupo Promover, uma referência em estética avançada consolidada há mais de cinco anos no mercado. Com mais de 6 mil alunos formados em diferentes estados e países, o Grupo Promover é reconhecido pelo padrão de excelência e inovação na formação de profissionais da área.</p>
                     <ul class="about-features">
-                        <li><i class="fas fa-check-circle"></i> Palestras com especialistas renomados</li>
-                        <li><i class="fas fa-check-circle"></i> Demonstrações práticas de procedimentos</li>
+                        <li><i class="fas fa-check-circle"></i> Palestras demonstrativas com especialistas renomados</li>
+                        <li><i class="fas fa-check-circle"></i> Live injection e demonstrações práticas ao vivo</li>
+                        <li><i class="fas fa-check-circle"></i> Harmonização orofacial e técnicas avançadas</li>
+                        <li><i class="fas fa-check-circle"></i> Certificado internacional reconhecido</li>
+                        <li><i class="fas fa-check-circle"></i> Dissecação craniofacial com peças Fresh Frozen</li>
                         <li><i class="fas fa-check-circle"></i> Exposição de tecnologias de ponta</li>
                         <li><i class="fas fa-check-circle"></i> Networking com profissionais do setor</li>
+                        <li><i class="fas fa-check-circle"></i> Foco em marketing e gestão para clínicas</li>
                     </ul>
                 </div>
                 <div class="about-stats">
@@ -787,7 +1089,8 @@
                     </main>
                     <div class="ticket-button">
                         <a href="https://www.sympla.com.br/evento/bioesthetic-brasil-2025/2769402" 
-                           target="_blank" class="btn btn-ticket">
+                           target="_blank" class="btn btn-ticket"
+                           onclick="trackTicketPurchase('Standard Ticket')">
                             <i class="fas fa-ticket-alt"></i>
                             Comprar Ingresso
                         </a>
@@ -845,7 +1148,8 @@
                     </main>
                     <div class="ticket-button">
                         <a href="https://www.sympla.com.br/evento/bioesthetic-brasil-2025/2769402" 
-                           target="_blank" class="btn btn-ticket-vip">
+                           target="_blank" class="btn btn-ticket-vip"
+                           onclick="trackTicketPurchase('VIP Ticket')">
                             <i class="fas fa-crown"></i>
                             Comprar VIP
                         </a>
@@ -917,6 +1221,38 @@
 
 
 
+    <!-- FAQ Section for SEO -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Perguntas Frequentes</h2>
+                <p class="section-subtitle">Tudo o que você precisa saber sobre o evento</p>
+            </div>
+            <div class="faq-content">
+                <div class="faq-item">
+                    <h3>Como o Bioesthetic Brasil se compara com outros eventos de harmonização facial?</h3>
+                    <p>O Bioesthetic Brasil oferece a mesma qualidade de eventos como <strong>Bel Guerra Experience</strong>, <strong>CONGREHOF</strong> e <strong>ABEHOF</strong>, porém no Rio de Janeiro, facilitando o acesso para profissionais do Sudeste. Contamos com <strong>palestras demonstrativas</strong>, <strong>live injection</strong> e certificado, além de foco especial em <strong>marketing e gestão clínica</strong>.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Vocês oferecem demonstrações ao vivo como outros congressos?</h3>
+                    <p>Sim! Nosso evento inclui <strong>live injection</strong> e <strong>demonstrações práticas ao vivo</strong>, similar aos melhores congressos de harmonização facial do Brasil. Além de uma aula em <strong>Fresh Frozen</strong> e técnicas avançadas de <strong>harmonização orofacial</strong>.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>O evento aborda harmonização orofacial?</h3>
+                    <p>Absolutamente! Focamos tanto em <strong>harmonização facial</strong> quanto <strong>harmonização orofacial</strong>, cobrindo técnicas completas de <strong>full face harmonização</strong>. Nossa programação inclui <strong>saúde integrativa</strong> e as mais modernas técnicas do setor.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Por que escolher o Rio de Janeiro ao invés de outros estados?</h3>
+                    <p>O Rio de Janeiro oferece localização estratégica para profissionais do <strong>Sudeste</strong>, evitando deslocamentos longos para <strong>São Paulo, Curitiba ou Florianópolis</strong>. Mantemos o mesmo padrão de qualidade que os congressos de outros estados e com maior <strong>conveniência geográfica</strong>.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>O certificado é reconhecido?</h3>
+                    <p>Sim! Oferecemos <strong>certificado reconhecido</strong>, assim como os principais eventos do setor. Nosso certificado tem validade para comprovação de <strong>educação continuada</strong> e <strong>especialização profissional</strong>.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- CTA Section -->
     <section class="cta">
         <!-- DNA Animation CTA -->
@@ -928,7 +1264,8 @@
                 <h2>Não Perca Esta Oportunidade</h2>
                 <p>Garanta já seu lugar no maior evento de estética avançada do Rio de Janeiro</p>
                 <a href="https://www.sympla.com.br/evento/bioesthetic-brasil-2025/2769402" 
-                   target="_blank" class="btn btn-secondary btn-large">
+                   target="_blank" class="btn btn-secondary btn-large"
+                   onclick="trackTicketPurchase('CTA Button')">
                     <i class="fas fa-ticket-alt"></i>
                     Comprar Ingresso Agora
                 </a>
@@ -946,13 +1283,14 @@
                 </div>
                 <div class="footer-section">
                     <h4>Contato</h4>
-                    <p>Email: contatobioestheticbrasil@gmail.com</p>
+                    <p>Email: bioestheticbrasil@promovercursos.com.br</p>
                     <p>Telefone: (21) 97142-2068</p>
                 </div>
                 <div class="footer-section">
                     <h4>Redes Sociais</h4>
                     <div class="social-links">
-                        <a href="https://www.instagram.com/bioestheticbrasil"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.instagram.com/bioestheticbrasil" 
+                           onclick="trackButtonClick('Instagram Follow')"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
@@ -966,7 +1304,8 @@
     <div class="whatsapp-float">
         <a href="https://wa.me/5521971422068?text=Olá! Gostaria de saber mais informações sobre o Bioesthetic Brasil 2025" 
            target="_blank" 
-           class="whatsapp-btn">
+           class="whatsapp-btn"
+           onclick="trackButtonClick('WhatsApp Contact')">
             <span class="whatsapp-text">Dúvidas?</span>
             <i class="fab fa-whatsapp"></i>
         </a>
@@ -1048,34 +1387,67 @@
             }
         }
 
-        // Initialize animations for both tickets
-        createTicketAnimations('vip-app', 14); // VIP ticket slightly slower
-        
-        // Add normal ticket animation
-        const normalTicketApp = document.querySelector('.ticket-app:not(#vip-app)');
-        if (normalTicketApp) {
-            normalTicketApp.id = 'normal-app';
-            createTicketAnimations('normal-app', 16); // Normal ticket even slower
+        // Initialize animations after DOM and GSAP are loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if GSAP is loaded
+            if (typeof gsap === 'undefined') {
+                console.warn('GSAP not loaded, retrying...');
+                setTimeout(() => {
+                    initializeTicketAnimations();
+                }, 100);
+            } else {
+                initializeTicketAnimations();
+            }
+        });
+
+        function initializeTicketAnimations() {
+            // Initialize animations for both tickets
+            createTicketAnimations('vip-app', 14); // VIP ticket slightly slower
+            
+            // Add normal ticket animation
+            const normalTicketApp = document.querySelector('.ticket-app:not(#vip-app)');
+            if (normalTicketApp) {
+                normalTicketApp.id = 'normal-app';
+                createTicketAnimations('normal-app', 16); // Normal ticket even slower
+            }
+
+            // Initialize DNA animations for tickets
+            if (typeof DNAAnimation !== 'undefined') {
+                new DNAAnimation('dna-canvas-ticket-normal', {
+                    scale: 0.4,
+                    opacity: 0.7,
+                    speed: 0.8,
+                    particleCount: 16,
+                    radius: 3,
+                    height: 5
+                });
+
+                new DNAAnimation('dna-canvas-ticket-vip', {
+                    scale: 0.4,
+                    opacity: 0.8,
+                    speed: 1.0,
+                    particleCount: 16,
+                    radius: 3,
+                    height: 5
+                });
+            }
+
+            // Create faces for both tickets with better visibility
+            createTicketFace('#face-svg-ticket-normal', 'rgba(255, 255, 255, 0.8)', 0.7);
+            createTicketFace('#face-svg-ticket-vip', 'rgba(7, 190, 184, 1)', 0.8);
+
+            // Initialize DNA animation inside face for mobile
+            if (window.innerWidth <= 768 && typeof DNAAnimation !== 'undefined') {
+                new DNAAnimation('dna-canvas-face-mobile', {
+                    scale: 0.8,
+                    opacity: 1.0,
+                    speed: 1.0,
+                    particleCount: 16,
+                    radius: 3,
+                    height: 5
+                });
+            }
         }
-
-        // Initialize DNA animations for tickets
-        new DNAAnimation('dna-canvas-ticket-normal', {
-            scale: 0.4,
-            opacity: 0.7,
-            speed: 0.8,
-            particleCount: 16,
-            radius: 3,
-            height: 5
-        });
-
-        new DNAAnimation('dna-canvas-ticket-vip', {
-            scale: 0.4,
-            opacity: 0.8,
-            speed: 1.0,
-            particleCount: 16,
-            radius: 3,
-            height: 5
-        });
 
         // Create static faces for tickets
         function createTicketFace(svgId, color, opacity = 0.6) {
@@ -1092,22 +1464,6 @@
             pathEl.style.strokeWidth = "2";
             pathEl.style.opacity = opacity;
             svg.appendChild(pathEl);
-        }
-
-        // Create faces for both tickets with better visibility
-        createTicketFace('#face-svg-ticket-normal', 'rgba(255, 255, 255, 0.8)', 0.7);
-        createTicketFace('#face-svg-ticket-vip', 'rgba(7, 190, 184, 1)', 0.8);
-
-        // Initialize DNA animation inside face for mobile
-        if (window.innerWidth <= 768) {
-            new DNAAnimation('dna-canvas-face-mobile', {
-                scale: 0.8,
-                opacity: 1.0,
-                speed: 1.0,
-                particleCount: 16,
-                radius: 3,
-                height: 5
-            });
         }
     </script>
 </body>
